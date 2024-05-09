@@ -1,0 +1,9 @@
+public class OldAccountUtility {
+    public static void updateOlderAccount(){
+        Account[] oldAccounts=[SELECT Id,Description From Account ORDER By CreatedDate ASC LIMIT 5];
+        for(Account acc:oldAccounts){
+            acc.Description='Heritage Account';
+        }
+        update oldAccounts;
+    }
+}
